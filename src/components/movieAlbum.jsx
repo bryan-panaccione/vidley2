@@ -32,6 +32,12 @@ class MovieAlbum extends Component {
     const cardDel =
       e.target.parentNode.parentNode.parentNode.parentNode.parentNode;
     cardDel.remove();
+    const cardTainer = document.querySelector(".row");
+    const logo = document.querySelector(".App-logo");
+    if (cardTainer.childElementCount === 0) {
+      cardTainer.innerHTML = "<div>No movies remaining</div>";
+      logo.classList.add("App-logoFast");
+    }
   };
   render() {
     return (
